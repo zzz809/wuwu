@@ -4,45 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Static Page</title>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <script type="module" src="index.js"></script>  <!-- 引入你的 JS 文件 -->
 </head>
 <body>
   <h1>Welcome to My Static Page</h1>
-  <div>
-    <p>Current View Count: <span id="view-count">Loading...</span></p>
-  </div>
-
-  <script>
-    // Firebase config from your project settings
-  const firebaseConfig = {
-    apiKey: "AIzaSyBJgdCFkiVdz-eD7-f5TWfA4QDv42jOguk",
-    authDomain: "data-a7e8f.firebaseapp.com",
-    databaseURL: "https://data-a7e8f-default-rtdb.firebaseio.com",
-    projectId: "data-a7e8f",
-    storageBucket: "data-a7e8f.firebasestorage.app",
-    messagingSenderId: "876657837650",
-    appId: "1:876657837650:web:468c8421c5ceb31f76818b",
-    measurementId: "G-5RWLFMRRVW"
-  };
-
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const database = firebase.database(app);
-
-    // Reference to the 'views' node in your Firebase Realtime Database
-    const viewsRef = database.ref('views');
-
-    // Get the current view count from Firebase and display it
-    viewsRef.once('value', (snapshot) => {
-      const viewCount = snapshot.val();
-      document.getElementById('view-count').innerText = viewCount;
-    });
-
-    // Increment the view count on each page load
-    viewsRef.transaction((currentViews) => {
-      return (currentViews || 0) + 1;
-    });
-  </script>
+  <p>Current View Count: <span id="view-count">Loading...</span></p>
 </body>
 </html>
