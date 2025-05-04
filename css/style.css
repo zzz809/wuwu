@@ -22,8 +22,8 @@ body {
   font-family:"Times New Roman", Times, 
   "Microsoft YaHei", "SimHei", 
   sans-serif;
-  user-select: none;/* 文档防复制 */
-  -webkit-user-select: none;/* 文档防复制 */
+ /* user-select: none;/* 文档防复制 */
+ /* -webkit-user-select: none;/* 文档防复制 */
 }
 body::after {
   content: "小红书@呜呜 \A 禁止搬运 | 原创保护"; /* 使用\A换行 */
