@@ -82,6 +82,10 @@ h2, h3 {
 }
 .fangsong-text p{
     margin: 0.8em 0;
+    font-family: inherit;       /* 明确继承容器字体 */
+    font-size: inherit;
+    line-height: inherit;
+    
 }
 .heiti-text {
     font-family: 
@@ -91,7 +95,8 @@ h2, h3 {
         '黑体',               /* Windows系统字体 */
         'SimHei',           /* macOS系统字体 */
         'STSimhei',         /* 其他系统变体 */
-        serif;                /* 通用衬线字体 */
+        serif
+        !important;                /* 通用衬线字体 */
     line-height: 1.6;
     font-size: 20px;
     text-align: justify;
@@ -101,6 +106,10 @@ h2, h3 {
 }
 .heiti-text p{
     margin: 0.8em 0;
+    line-height: inherit;   /* 继承父元素的行高 */
+    font-size: inherit;     /* 继承父元素的字体大小 */
+    text-align: inherit;    /* 继承父元素的文本对齐 */
+    text-indent: inherit;   /* 继承父元素的首行缩进 */
 }
 .kaiti-text {
     font-family: 
