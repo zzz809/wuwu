@@ -1,14 +1,4 @@
-/* 时间模块样式 */
-.time-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 16px;
-  margin: 12px 0;
-  border: 1px solid #eee;
-}
-
-/* 时钟容器 */
+/* 时间模块容器 */
 .time-card {
   background: #fff;
   border-radius: 16px;  /* 与导航栏圆角匹配 */
@@ -17,11 +7,13 @@
   margin: 16px 0;
   border: 1px solid #eee;
   position: relative;
+  max-width: 100%; /* 限制最大宽度 */
+  overflow: hidden; /* 防止内容溢出 */
 }
 
 /* 动态时间显示 */
 .time-display {
-  font-family: 'Helvetica Neue', sans-serif;  /* 与页面字体统一 */
+  font-family: 'SF Pro Display', 'Segoe UI', 'HarmonyOS Sans', 'Noto Sans SC', sans-serif;
   font-size: 18px;
   color: #333;
   text-align: center;
@@ -33,36 +25,28 @@
   color: transparent;
   border: 2px solid #ffeded; /* 浅红色边框 */
   border-radius: 24px;  /* 胶囊形状与页面按钮统一 */
+  white-space: nowrap; /* 防止内容换行 */
+  overflow: hidden; /* 防止内容溢出 */
+  text-overflow: ellipsis; /* 超出内容用省略号表示 */
 }
 
 /* LIVE标识增强 */
 .live-indicator {
   background: #ed4159;  /* 导航栏主红色 */
   color: white;
-  font-size: 16px;
-  padding: 2px 8px;
+  font-size: 14px; /* 调整字体大小，确保显示完整 */
+  padding: 4px 12px; /* 增加内边距，确保标识大小适合显示 */
   border-radius: 16px;
   position: absolute;
-  right: -6px;
-  top: -8px;
+  right: 10px; /* 适当调整右侧位置，避免溢出 */
+  top: 10px;  /* 适当调整上方位置 */
   box-shadow: 0 2px 6px rgba(237,65,89,0.3);
   animation: pulse 1.5s infinite; /* 呼吸灯效果 */
 }
 
 /* 时间显示新增星期 */
 .time-display {
-  /* 保持原有样式 */
-  font-family: 'Helvetica Neue', 'PingFang SC', sans-serif; /* 中文字体优化 */
-}
-
-.time-display {
-  /* 基础样式保持不变 */
-  font-family: 
-    'SF Pro Display',  /* 苹果系统首选 */
-    'Segoe UI',        /* Windows系统 */
-    'HarmonyOS Sans',  /* 华为鸿蒙 */
-    'Noto Sans SC',    /* 通用简体中文 */
-    sans-serif;
+  font-family: 'SF Pro Display', 'Segoe UI', 'HarmonyOS Sans', 'Noto Sans SC', sans-serif;
   letter-spacing: -0.02em; /* 紧凑字距 */
 }
 
@@ -102,8 +86,6 @@
   background: #ddd;
 }
 
-
-
 /* 打印适配 */
 @media print {
   .time-card {
@@ -117,14 +99,6 @@
   .live-indicator {
     display: none; /* 隐藏动态元素 */
   }
-}
-
-/* 缩放防护 */
-.time-display {
-  font-size: clamp(1rem, 2vw + 8px, 1.25rem); /* 动态字体大小 */
-  white-space: nowrap; /* 防止折行 */
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* 高对比度模式 */
