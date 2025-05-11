@@ -18,7 +18,7 @@ document.write('<link rel="preload" href="/fonts/Times/Times.woff2" as="font" ty
 document.write('<link rel="preload" href="/fonts/KaiTi/Times.woff2" as="font" type="font/woff2" crossorigin>');
 document.write('<link rel="preload" href="/fonts/HeiTi/HeiTi.woff2" as="font" type="font/woff2" crossorigin>');
 document.write('<link rel="preload" href="/fonts/FangSong.ttf" as="font" crossorigin>');
-
+document.write('<link rel="icon" href="/images/intro.jpg" type="image/x-icon">');
 
 //保研经验按钮
 document.write('<link rel="stylesheet" href="/css/button_byjs.css">');
