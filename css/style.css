@@ -53,12 +53,13 @@ body::after {
 }
 
 /* ===== 顶部导航栏 ===== */
+/* 顶部导航栏 */
 .nav-bar {
   position: fixed;
   width: 100%;
   height: 60px;
   z-index: 1000;
-  background: #2c3e50;
+  background: #2c3e50;  /* 深色背景 */
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -74,7 +75,7 @@ body::after {
 }
 
 .platform-name {
-  color: #ff6b6b;
+  color: #ff6b6b;  /* 小红书品牌红 */
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -89,6 +90,16 @@ body::after {
   color: #ecf0f1;
   font-size: 1.3rem;
   letter-spacing: 1px;
+}
+
+/* 中间日期 */
+.date {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ecf0f1;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
 }
 
 /* ===== 内容区域 ===== */
