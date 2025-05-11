@@ -28,21 +28,26 @@
         <a href="index.html">首页</a> &gt; 保研经验
     </div>
     <div class="filter-buttons">
-      <button class="filter-btn" data-category="all">全部</button>
-      <button class="filter-btn" data-category="集成电路保研与院校分析">集成电路</button>
-      <button class="filter-btn" data-category="2026届夏令营/预推免材料保研文书详细内容">保研文书</button>
-      <button class="filter-btn" data-category="面试">参营经验</button>
+      <button class="filter-btn active" data-category="all">全部</button>
+      <button class="filter-btn" data-category="集成电路">集成电路</button>
+      <button class="filter-btn" data-category="保研文书">保研文书</button>
+      <button class="filter-btn" data-category="参营经验">参营经验</button>
     </div>
-
     <section class="policy-category">
+
       <h2 class="category-title">
         <span class="icon-file"></span>
         保研经验
       </h2>
+      <div id="article-count" class="article-count">
+        <!-- 这里显示文章数量 -->
+      </div>
       <div class="policy-list" id="article-container">
-        <!-- 所有 article 都直接放在这个容器内 -->
-        </div>
+        <!-- 所有的文章将动态加载到这里 -->
+      </div>
+
     </section>
+    
   </main>
   <!-- 底部版权 -->
   <div id="footer"></div>
