@@ -105,3 +105,70 @@
     gap: 6px;
   }
 }
+
+
+
+
+/* 文章数量提示框 */
+.article-count {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 400; /* 使用标准的字体粗细，增加正式感 */
+  color: #5a5a5a; /* 深灰色，增强可读性，同时与浅色背景配合 */
+  text-align: center;
+  padding: 12px 20px;
+  border: 1px solid #d1d1d1; /* 浅灰色边框，柔和感 */
+  border-radius: 4px; /* 更为方正的圆角，增加严谨感 */
+  background-color: #fffdf7; /* 淡米色背景，接近 255, 255, 247 色 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 轻微的阴影，使框体更加立体 */
+  transition: all 0.3s ease;
+}
+
+/* 悬停效果 */
+.article-count:hover {
+  border-color: #b0b0b0; /* 悬停时使用中灰色，给人一种轻微变化的感觉 */
+  color: #333; /* 悬停时文字颜色加深，增强视觉对比度 */
+  transform: translateY(-2px); /* 微调上升效果，增强互动感 */
+}
+
+/* 文字前缀 */
+.article-count:before {
+  content: "当前攻略数量：";
+  font-size: 14px;
+  color: #5a5a5a; /* 使用深灰色前缀 */
+  font-weight: 500; /* 加粗前缀，增强正式感 */
+  margin-right: 8px;
+}
+
+/* 数字部分 */
+.article-count .count-number {
+  font-weight: 600; /* 强调数字的显示 */
+  font-size: 16px; /* 数字稍大一点，突出显示 */
+  color: #ff7f00; /* 温暖的橙色来突出显示数字，增加视觉吸引力 */
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .article-count {
+    font-size: 12px;
+    padding: 8px 16px;
+    margin-top: 16px;
+  }
+
+  .article-count .count-number {
+    font-size: 14px; /* 数字在移动端稍微调整大小 */
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 480px) {
+  .article-count {
+    font-size: 11px; /* 在更小屏幕上调整字体大小 */
+    padding: 6px 12px;
+    margin-top: 12px;
+  }
+
+  .article-count .count-number {
+    font-size: 12px; /* 更小屏幕时数字字体更小 */
+  }
+}
