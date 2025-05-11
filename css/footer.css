@@ -1,0 +1,131 @@
+/* ===== 底部版权 ===== */
+.footer {
+    background: #2c3e50;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center; /* 居中内容 */
+    align-items: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;  /* 居中页脚 */
+    width: 100%;
+  }
+  
+  .footer-left {
+    display: flex;
+    justify-content: flex-start;  /* 保证二维码在左侧 */
+    align-items: center;
+    flex-wrap: wrap;  /* 二维码换行显示 */
+    margin-right: 30px;  /* 增加与右侧内容的间距 */
+  }
+  
+  .footer-qr {
+    width: 140px;  /* 设置二维码大小 */
+    height: 140px;  /* 保持二维码为正方形 */
+    margin-right: 40px;  /* 二维码之间的间隔 */
+  }
+  
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* 保证文字左对齐 */
+    text-align: left;
+  }
+  
+  .footer-right p {
+    margin: 5px 0;
+  }
+  
+  .footer-right p a {
+    margin-right: 100px;  /* 增加两个链接之间的间隔 */
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    color: #ccc;
+  }
+  
+/* ===== 打印优化 ===== */
+@media print {
+    .footer {
+      background: #2c3e50; /* 保持背景色不变 */
+      color: white;  /* 保持字体颜色为白色 */
+      padding: 1.5rem;  /* 保持原内边距 */
+      margin: 0 auto;  /* 居中页脚 */
+      text-align: center; /* 打印时文本居中 */
+      font-size: 16px; /* 保持原字体大小，不缩小 */
+      display: block;  /* 使用块级布局 */
+    }
+  
+    .footer-left, .footer-right {
+      display: block;  /* 打印时使用块级布局 */
+      margin-right: 0;
+      text-align: center; /* 打印时文字居中 */
+      margin-bottom: 10px; /* 增加底部间距，使内容不重叠 */
+    }
+  
+    .footer-qr {
+      width: 140px;  /* 打印时二维码尺寸不变 */
+      height: 140px;
+      margin-right: 40px;  /* 保持二维码之间的间隔 */
+      display: inline-block;  /* 打印时二维码作为内联块级元素显示 */
+      margin-bottom: 10px; /* 增加二维码底部间距 */
+    }
+  
+    .footer-right p {
+      margin: 5px 0;
+    }
+  
+    .footer-right p a {
+      margin-right: 100px;  /* 保持链接之间的间隔 */
+    }
+  
+    /* 打印时移除hover效果 */
+    .footer a:hover {
+      color: white;
+    }
+  
+    /* 确保打印页面不被裁剪 */
+    @page {
+      margin: 0;
+    }
+  
+    body {
+      margin: 0;
+    }
+  }
+  
+  /* ===== 小屏优化（如手机） ===== */
+  @media (max-width: 767px) {
+    .footer {
+      flex-direction: column; /* 小屏时改为竖直排列 */
+      align-items: center;  /* 居中对齐 */
+      padding: 1rem;
+    }
+  
+    .footer-left {
+      margin-right: 0;  /* 去掉二维码与右侧内容之间的间距 */
+      margin-bottom: 20px;  /* 增加二维码与文字之间的间隔 */
+      justify-content: center;  /* 二维码居中 */
+    }
+  
+    .footer-qr {
+      width: 100px;  /* 小屏时二维码尺寸减小 */
+      height: 100px;
+      margin-right: 15px;  /* 减少二维码之间的间隔 */
+    }
+  
+    .footer-right {
+      align-items: center;  /* 文字居中 */
+    }
+  
+    .footer-right p a {
+      margin-right: 20px;  /* 减小链接之间的间隔 */
+    }
+  }
+  
