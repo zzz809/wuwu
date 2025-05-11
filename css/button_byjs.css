@@ -133,7 +133,7 @@
 
 /* 文字前缀 */
 .article-count:before {
-  content: "当前攻略数量：";
+  content: "当前页面：";
   font-size: 14px;
   color: #5a5a5a; /* 使用深灰色前缀 */
   font-weight: 500; /* 加粗前缀，增强正式感 */
