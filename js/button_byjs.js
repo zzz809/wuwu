@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const filterButtons = document.querySelectorAll('.filter-btn');
   const articleContainer = document.getElementById('article-container');
+  const articleCount = document.getElementById('article-count');
 
-  // 从 byjy_articles.html 加载文章
+  // 从 /fengzhuang/byjy_articles.html 加载文章
   const loadArticles = async (category = 'all') => {
     try {
       // 使用 Fetch API 加载外部 HTML 文件
-      const response = await fetch('/fengzhuang/byjy_articles.html');
+      const response = await fetch('/fengzhuang/byjy_articles.html'); // 这里使用新的路径
       const text = await response.text();
 
       // 将外部 HTML 内容转化为 DOM
@@ -17,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const articles = Array.from(tempDiv.querySelectorAll('.policy-card'));
 
       // 过滤文章
-      const filteredArticles = articles.filter(article => {
-        return category === 'all' || article.dataset.category === category;
-      });
+      const filteredArticles = articles.filter(article => category === 'all' || article.dataset.category === category);
 
       // 按照日期从新到旧排序
       filteredArticles.sort((a, b) => {
@@ -35,8 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
       filteredArticles.forEach(article => {
         articleContainer.appendChild(article);
       });
+
+      // 更新文章数量显示
+      articleCount.textContent = `共 ${filteredArticles.length} 条攻略`;
     } catch (error) {
       console.error('加载文章失败:', error);
+      articleCount.textContent = '加载失败，请重试'; // 错误时显示提示
     }
   };
 
