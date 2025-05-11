@@ -5,45 +5,46 @@
   box-sizing: border-box;
   font-family: '微软雅黑', 'Helvetica Neue', sans-serif;
 }
+
 /* 自定义变量（命名空间化） */
 :root {
   --mm-primary-red: #FF3B30;       /* 主品牌色 */
   --mm-secondary-bg: #FFF0F0;      /* 辅助背景 */
   --mm-text-dark: #333333;         /* 主要文字 */
   --mm-border-color: #EEEEEE;      /* 边框颜色 */
-  --mm-card-shadow: 0 4px 20px rgba(0,0,0,0.08); /* 卡片阴影 */
+  --mm-card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 卡片阴影 */
+  --mm-light-red: rgba(255, 36, 66, 0.5); /* 小红书品牌红透明度 */
+  --mm-white: #ffffff;
+  --mm-dark-gray: #2c3e50;
+  --mm-light-gray: #f8f9fa;
+  --mm-pink: #FF3366;
 }
+
+/* 基础样式 */
 body {
-  min-width: auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #f8f9fa;
-  font-family:"Times New Roman", Times, 
-  "Microsoft YaHei", "SimHei", 
-  sans-serif;
- /* user-select: none;/* 文档防复制 */
- /* -webkit-user-select: none;/* 文档防复制 */
+  background: var(--mm-light-gray);
+  font-family: "Times New Roman", Times, "Microsoft YaHei", "SimHei", sans-serif;
+  user-select: none; /* 防止复制 */
 }
+
 body::after {
-  content: "小红书@呜呜 \A 禁止搬运 | 原创保护"; /* 使用\A换行 */
+  content: "小红书@呜呜 \A 禁止搬运 | 原创保护";
   position: fixed;
-  z-index: 9999;
-  bottom: 20px;  /* 右下角定位 */
+  bottom: 20px;
   right: 20px;
-  color: rgba(255, 36, 66, 0.5); /* 小红书品牌红透明度15% */
+  color: var(--mm-light-red);
   pointer-events: none;
-  font: 
-    300 18px/1.5 'PingFang SC', /* 苹方细体 */
-    sans-serif;
+  font: 300 18px/1.5 'PingFang SC', sans-serif;
   white-space: pre;
   text-align: right;
   text-shadow: 0 2px 3px rgba(255,36,66,0.1);
-  transform: rotate(-5deg); /* 轻微倾斜 */
-  animation: 
-    breath 2s ease-in-out infinite alternate,
-    fadeIn 0.5s ease-out;
+  transform: rotate(-5deg);
+  animation: breath 2s ease-in-out infinite alternate, fadeIn 0.5s ease-out;
 }
+
 /* 呼吸动画 */
 @keyframes breath {
   from { opacity: 0.9; }
@@ -55,19 +56,21 @@ body::after {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 0.9; transform: translateY(0); }
 }
+
 /* ===== 顶部导航栏 ===== */
 .nav-bar {
   position: fixed;
-  width:100%;
+  width: 100%;
   height: 60px;
   z-index: 1000;
-  background: #2c3e50;  /* 深色背景 */
+  background: var(--mm-dark-gray);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
+
 /* 左侧个人信息 */
 .personal-info {
   display: flex;
@@ -76,31 +79,31 @@ body::after {
 }
 
 .platform-name {
-  color: #ff6b6b;      /* 小红书风格红色 */
+  color: #ff6b6b;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .username {
-  color: white;
+  color: var(--mm-white);
   font-size: 1.2rem;
 }
-
-/* 右侧欢迎语 */
-.welcome-text {
-  color: #ecf0f1;
-  font-size: 1.3rem;
-  letter-spacing: 1px;
+/* 中间日期样式 */
+.current-date {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 20px;
 }
 /* 右侧欢迎语 */
-.welcome-text_tem1 {
+.welcome-text, .welcome-text_tem1 {
   color: #ecf0f1;
   font-size: 1.3rem;
   letter-spacing: 1px;
 }
 
 /* ===== 内容区域 ===== */
-.maincontent_80px{
+.maincontent_80px {
   padding-top: 60px;
 }
 
@@ -109,7 +112,6 @@ body::after {
   padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .post-list {
@@ -118,7 +120,7 @@ body::after {
 }
 
 .post-item {
-  background: white;
+  background: var(--mm-white);
   border-radius: 12px;
   padding: 1.5rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
@@ -136,105 +138,85 @@ body::after {
   display: inline-flex;
   align-items: center;
   padding: 6px 12px;
-  background: #FFF0F5;           /* 小红书风格浅粉色背景 */
-  border-radius: 16px;           /* 胶囊形状 */
-  color: #FF3366;                /* 主品牌红色 */
+  background: #FFF0F5;
+  border-radius: 16px;
+  color: var(--mm-pink);
   font-size: 0.95rem;
   margin-bottom: 0.8rem;
-  font-family: 
-      -apple-system, 
-      "PingFang SC",
-      "Microsoft YaHei",
-      sans-serif;
   box-shadow: 0 2px 6px rgba(255, 51, 102, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* 日历图标装饰 */
-  &::before {
-      content: '';
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin-right: 8px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23FF3366" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>');
-  }
 }
 
-/* 悬停动效 */
 .post-date:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(255, 51, 102, 0.12);
-  background: #fff;
+  background: var(--mm-white);
 }
 
+.post-date::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23FF3366" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>');
+}
 
-/* 日期格式优化（需配合HTML时间标签） */
+/* 日期格式优化 */
 .post-date time {
   display: flex;
   gap: 4px;
-  
-  /* 年份样式 */
-  &::after {
-      content: '年';
-      color: #FF99B3;  /* 浅粉色辅助文字 */
-  }
-  
-  /* 月份样式 */
-  & > span:nth-child(2)::after {
-      content: '月';
-      color: #FF99B3;
-  }
-  
-  /* 日样式 */
-  & > span:last-child::after {
-      content: '日';
-      color: #FF99B3;
-  }
 }
-.post-title {
-  /* 布局定位 */
-  position: relative;
-  padding: 12px 20px 12px 56px; /* 左侧留出色块空间 */
-  margin: 24px 0;
-  
-  /* 色块设计 */
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(255, 51, 102, 0.1); /* 小红书风格阴影 */
-  
-  /* 主色装饰线 */
-  &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 8px;
-      bottom: 8px;
-      width: 4px;
-      background: #FF3366; /* 小红书品牌红色 */
-      border-radius: 2px;
-  }
 
-  /* 字体样式 */
-  font: 700 24px/1.3 
-      -apple-system, 
-      "PingFang SC",
-      "Microsoft YaHei",
-      sans-serif;
-  color: #1A1A1A; /* 小红书深灰色 */
+.post-date time::after {
+  content: '年';
+  color: #FF99B3;
+}
+
+.post-date time > span:nth-child(2)::after {
+  content: '月';
+  color: #FF99B3;
+}
+
+.post-date time > span:last-child::after {
+  content: '日';
+  color: #FF99B3;
+}
+
+/* 标题样式 */
+.post-title {
+  position: relative;
+  padding: 12px 20px 12px 56px;
+  margin: 24px 0;
+  background: var(--mm-white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255, 51, 102, 0.1);
+  font: 700 24px/1.3 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: #1A1A1A;
   letter-spacing: -0.5px;
-  
-  /* 交互效果 */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .post-title:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 51, 102, 0.15);
-    
-    &::before {
-        width: 6px;
-        background: #FF6699; /* 悬停色变浅 */
-    }
-  }
+}
+
+.post-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  background: var(--mm-pink);
+  border-radius: 2px;
+}
+
+.post-title:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 51, 102, 0.15);
+}
+
+.post-title:hover::before {
+  width: 6px;
+  background: #FF6699;
+}
 
 .post-excerpt {
   color: #555;
@@ -243,160 +225,32 @@ body::after {
 
 /* ===== 底部版权 ===== */
 .footer {
-  background: #2c3e50;
+  background: var(--mm-dark-gray);
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
   padding: 1.5rem;
   margin-top: auto;
 }
-/* 设置 footer 内所有超链接的样式 */
+
 .footer a {
-  color: white; /* 超链接字体颜色为白色 */
-  text-decoration: none; /* 去掉下划线 */
-  margin: 0 10px; /* 超链接之间的间距 */
+  color: var(--mm-white);
+  text-decoration: none;
+  margin: 0 10px;
 }
 
-/* 设置鼠标悬停时超链接的样式 */
 .footer a:hover {
-  color: #ccc; /* 鼠标悬停时字体颜色变为浅灰色 */
+  color: #ccc;
 }
 
 .contact-info {
-margin-top: 0.5rem;
-font-size: 0.9rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
 }
 
-/* 打印专用样式（不溢出屏幕） */
+/* 打印样式 */
 @media print {
   .nav-bar {
     position: static !important;
     z-index: -9999 !important;
-  }
-  .maincontent_80px {
-    padding-top: 0 !important;
-}
-  @page {
-    size: auto;        /* 自动适应纸张尺寸 */
-    margin: 0;         /* 完全消除默认页边距 */
-  }
-
-  body {
-    min-width: auto !important;
-    width: 100% !important;
-    margin: 0 !important;       /* 消除内容边距 */
-    display: block !important;
-    font-size: 12pt !important;
-    -webkit-print-color-adjust: exact; /* 强制显示颜色 */
-    color-adjust: exact;        /* 标准属性 */
-  }
-
-  /* 隐藏非必要元素 */
-  .no-print {
-    display: none !important;
-  }
-
-  /* 分页优化 */
-  .print-section {
-    page-break-inside: avoid;
-  }
-
-  /* 允许分页 */
-  html, article {
-    page-break-before: auto;
-    page-break-after: auto;
-  }
-
-  /* 保证页眉页脚内容可见 */
-  header, footer {
-    display: block !important;
-    position: static;
-    background: inherit;
-  }
-}
-
-
-/* ===== 响应式适配优化版 ===== */
-@media (max-width: 1200px) {
-  body { 
-    min-width: auto;
-    overflow-x: hidden; /* 防止横向溢出 */
-  }
-  
-  /* 内容区域安全边界 */
-  .content {
-    padding: 2rem 1rem;
-    max-width: 100%;
-    width: calc(100% - 2rem); /* 留出安全边距 */
-    margin: 0 auto;
-    box-sizing: border-box; /* 关键属性 */
-  }
-}
-
-@media (max-width: 992px) {
-  /* 导航栏压缩保护 */
-  .nav-bar {
-    padding: 0 1rem;
-    flex-wrap: wrap; /* 允许换行 */
-    row-gap: 0.8rem;
-  }
-  
-  .personal-info {
-    flex: 1 1 60%; /* 弹性收缩 */
-    min-width: 120px; /* 最小保留宽度 */
-    overflow: hidden;
-  }
-  
-  .platform-name {
-    max-width: 100px; /* 更严格的限制 */
-  }
-}
-
-@media (max-width: 768px) {
-  /* 移动端安全布局 */
-  body {
-    touch-action: pan-y; /* 禁用横向滑动 */
-  }
-  
-  .content {
-    width: 100% !important;
-    padding: 2rem 1rem;
-    margin: 0;
-    left: 0;
-    transform: none; /* 移除偏移修正 */
-    box-shadow: none;
-  }
-
-  /* 导航栏移动端适配 */
-  .nav-bar {
-    padding: 0 0.5rem;
-    gap: 0.5rem;
-    
-    > * {
-      flex-shrink: 1; /* 允许子项收缩 */
-      max-width: 95%; /* 防溢出 */
-    }
-  }
-
-  /* 列表项安全处理 */
-  .post-list {
-    grid-template-columns: 1fr;
-    
-    /* 子项防溢出 */
-    & > * {
-      max-width: 100%;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-  }
-}
-
-/* 小屏幕特殊适配 */
-@media (max-width: 480px) {
-  .content {
-    padding: 1.5rem 0.8rem;
-  }
-  
-  .platform-name {
-    max-width: 80px !important;
   }
 }
