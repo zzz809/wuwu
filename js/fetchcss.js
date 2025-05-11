@@ -13,6 +13,7 @@ document.write('<link rel="stylesheet" href="/css/printbutton.css">');
 document.write('<link rel="stylesheet" href="/css/daohang.css">');
 document.write('<link rel="stylesheet" href="/css/neirong.css">');
 document.write('<link rel="stylesheet" href="/css/zitiyouhua.css">');
+document.write('<link rel="stylesheet" href="/css/footer.css">');
 document.write('<link rel="preload" href="/fonts/FangSong/FangSong.woff2" as="font" type="font/woff2" crossorigin>');
 document.write('<link rel="preload" href="/fonts/Times/Times.woff2" as="font" type="font/woff2" crossorigin>');
 document.write('<link rel="preload" href="/fonts/KaiTi/Times.woff2" as="font" type="font/woff2" crossorigin>');
