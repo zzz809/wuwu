@@ -6,6 +6,14 @@ const campusData = [
         endDate: "2025年6月20日",
         link: "https://sim.cas.cn/yjs/zsxx/yjs_sszs/202504/t20250430_7641257.html"
     },
+    {
+        schoolName: "上海科技大学",
+        collegeName: "信息科学与技术学院",
+        startDate: "2025年5月4日",
+        endDate: "2025年6月22日",
+        link: "https://sist.shanghaitech.edu.cn/2025/0504/c2863a1110662/page.htm"
+    },
+    
     ];
     // 填充表格数据
     const tableBody = document.querySelector("#campus-table tbody");
