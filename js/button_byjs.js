@@ -27,16 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return dateB - dateA; // 从新到旧排序
       });
 
+      // 获取置顶文章
+      const stickyArticles = filteredArticles.filter(article => article.dataset.sticky === 'true');
+      const nonStickyArticles = filteredArticles.filter(article => article.dataset.sticky !== 'true');
+
+      // 合并置顶和非置顶的文章，置顶文章排在最前面
+      const sortedArticles = [...stickyArticles, ...nonStickyArticles];
+
       // 清空容器，重新加载文章
       articleContainer.innerHTML = '';
 
       // 将过滤和排序后的文章添加到容器中
-      filteredArticles.forEach(article => {
+      sortedArticles.forEach(article => {
         articleContainer.appendChild(article);
       });
 
       // 更新文章数量显示
-      articleCount.textContent = `共 ${filteredArticles.length} 条攻略`;
+      articleCount.textContent = `共 ${sortedArticles.length} 条攻略`;
     } catch (error) {
       console.error('加载文章失败:', error);
       articleCount.textContent = '加载失败，请重试'; // 错误时显示提示
