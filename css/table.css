@@ -1,68 +1,193 @@
-
 /* ================= 表格全局样式 ================= */
 .college-table {
   margin: 2rem auto;
-  max-width: 1000px;
+  max-width: 100%;  /* 保证表格宽度不超过容器宽度 */
   width: 100%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  overflow-x: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;  /* 允许横向滚动 */
   -webkit-overflow-scrolling: touch;
   background: #fff;
-}
-
-.center-table {
-  text-align: center;
+  border-radius: 8px; /* 圆角 */
+  padding: 0 10px; /* 防止内容溢出 */
+  box-sizing: border-box; /* 保证padding不影响宽度 */
 }
 
 /* ================= 基础表格结构 ================= */
 table {
-  font-family: 
-        'MyTimes',
-        'Times New Roman',
-        'MyFangSong',         /* 自定义字体 */
-        '仿宋',               /* Windows系统字体 */
-        'FangSong',           /* macOS系统字体 */
-        'STFangsong',         /* 其他系统变体 */
-        serif;                /* 通用衬线字体 */
-    font-size: 20px;
-  width: 100%;
+  font-family: 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
+  font-size: 18px; /* 增大字体 */
+  width: 100%;  /* 确保表格宽度为100% */
   min-width: 600px;
   border-collapse: collapse;
   position: relative;
+  border-spacing: 0;
+  table-layout: auto; /* 自动布局，避免溢出 */
+  word-wrap: break-word; /* 防止过长的内容溢出 */
 }
 
 th {
-  font-family: 
-        'MyTimes',
-        'Times New Roman',
-        'MyFangSong',         /* 自定义字体 */
-        '仿宋',               /* Windows系统字体 */
-        'FangSong',           /* macOS系统字体 */
-        'STFangsong',         /* 其他系统变体 */
-        serif;                /* 通用衬线字体 */
-    font-size: 20px;
-  background: #f8f9fa;
+  font-family: 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
+  font-size: 20px; /* 加大表头字体 */
+  background-color: #f8d4e1; /* 柔和粉色背景 */
+  color: #333; /* 深灰色字体，易读 */
   font-weight: 600;
   padding: 12px 15px;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid #e9ecef; /* 浅灰色分隔线 */
   text-align: center;
+  border-radius: 8px 8px 0 0; /* 圆角上边 */
 }
 
 td {
-  font-family: 
-        'MyTimes',
-        'Times New Roman',
-        'MyFangSong',         /* 自定义字体 */
-        '仿宋',               /* Windows系统字体 */
-        'FangSong',           /* macOS系统字体 */
-        'STFangsong',         /* 其他系统变体 */
-        serif;                /* 通用衬线字体 */
+  font-family: 'Times New Roman', 'MyFangSong', '仿宋', 'FangSong', 'STFangsong', serif;
+  font-size: 18px; /* 增大字体 */
   padding: 12px 15px;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef; /* 浅灰色分隔线 */
   color: #495057;
   text-align: center;
+  background-color: #fef0f3; /* 更浅的粉色背景 */
+  border-radius: 0 0 8px 8px; /* 圆角下边 */
+}
+
+/* 列表奇偶行不同背景色 */
+tr:nth-child(even) td {
+  background-color: #fdf4f6; /* 另一种浅粉色背景 */
 }
 
 tr:hover td {
-  background-color: #f8f9fa;
+  background-color: #f8d0d8; /* 悬停时更深的柔和粉色 */
+  cursor: pointer;
+}
+/* ================= 链接样式 ================= */
+#campus-table a {
+  color: #e07b9d; /* 使用较深的粉色，与主色系协调 */
+  text-decoration: none; /* 去掉下划线 */
+}
+
+#campus-table a:hover {
+  text-decoration: none; /* 悬停时不显示下划线 */
+  color: #d06688; /* 悬停时使用更深的粉色 */
+}
+
+#campus-table a:focus, #campus-table a:active {
+  color: #d06688; /* 活跃时使用相同的深粉色 */
+}
+/* ================= 响应式设计 ================= */
+@media (max-width: 768px) {
+  /* 在移动端调整字体大小 */
+  table {
+    font-size: 14px;
+    min-width: 0;  /* 防止小屏幕下表格过长 */
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  /* 改变表头字体大小 */
+  th {
+    font-size: 16px;
+  }
+
+  /* 在小屏幕下让表格支持水平滚动 */
+  .college-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 5px; /* 更小的间距，避免溢出 */
+    box-sizing: border-box; /* 保证边距不影响宽度 */
+  }
+  /* 使用表格的横向滚动来应对超出内容 */
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* ================= 打印适配 ================= */
+@media print {
+  /* 打印优化：不隐藏任何内容和颜色 */
+  body {
+    font-size: 12px; /* 适当调小字体 */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff; /* 保证背景是白色 */
+    display: flex;
+    justify-content: center;  /* 居中显示内容 */
+    align-items: flex-start; /* 不要让内容完全垂直居中 */
+    flex-direction: column;
+  }
+
+  .college-table {
+    width: 100%;  /* 确保表格占满页面宽度 */
+    max-width: 100%; /* 确保不会超出页面 */
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0; /* 去除圆角，打印时更适合 */
+    table-layout: auto; /* 自动调整列宽 */
+    margin-top: 20px; /* 顶部留白 */
+    margin-bottom: 20px; /* 底部留白 */
+    margin-left: auto; /* 左侧居中 */
+    margin-right: auto; /* 右侧居中 */
+  }
+
+  th, td {
+    padding: 8px 10px;
+    font-size: 14px; /* 较小的字体适合打印 */
+    border: 1px solid #000; /* 给表格添加边框 */
+  }
+
+  /* 打印时，表格列宽自适应 */
+  table {
+    width: 100%;
+    table-layout: auto; /* 自动调整列宽 */
+    word-wrap: break-word;
+    page-break-inside: avoid; /* 避免表格跨页断行 */
+  }
+
+  /* 打印时，保留颜色和背景 */
+  th {
+    font-weight: bold;
+    background-color: #f8d4e1; /* 保留表头的背景色 */
+    color: #333; /* 表头文字颜色 */
+  }
+
+  td {
+    background-color: #fef0f3; /* 保留表格单元格背景 */
+    color: #495057; /* 内容文字颜色 */
+  }
+
+  /* 打印时奇偶行背景保持 */
+  tr:nth-child(even) td {
+    background-color: #fdf4f6;
+  }
+
+  tr:hover td {
+    background-color: #f8d0d8; /* 悬停时的颜色保持 */
+  }
+
+  /* 确保没有页面溢出 */
+  table {
+    page-break-inside: avoid;
+    white-space: nowrap;
+  }
+
+  /* 保证打印页面表格居中 */
+  @page {
+    margin: 20mm; /* 设置适当的边距 */
+  }
+
+  /* 取消横向滚动条，保持表格的标准布局 */
+  .college-table {
+    overflow-x: unset;  /* 取消横向滚动 */
+    -webkit-overflow-scrolling: unset; /* 取消滚动样式 */
+    padding: 0; /* 取消内边距 */
+  }
+
+  table {
+    display: table; /* 恢复表格的标准显示 */
+  }
 }
