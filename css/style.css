@@ -255,7 +255,7 @@ body::after {
     page-break-after: auto;
   }
 
-  header, footer {
+  header{
     display: block !important;
     position: static;
     background: inherit;
