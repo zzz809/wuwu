@@ -65,6 +65,7 @@ body::after {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
 /* 小红书风格日期样式 */
 .post-date {
   display: flex;
@@ -81,6 +82,7 @@ body::after {
   width: 100%;  /* 占据整行宽度 */
   box-shadow: 0 3px 6px rgba(255, 51, 102, 0.1); /* 轻微红色阴影 */
   transition: all 0.3s ease; /* 平滑过渡 */
+  border: 1px solid rgba(255, 51, 102, 0.2);  /* 添加边框，使日期块更有立体感 */
 }
 
 /* “发布时间：”文字样式 */
@@ -105,41 +107,52 @@ body::after {
   transform: translateY(-2px); /* 向上轻微浮动 */
   box-shadow: 0 4px 12px rgba(255, 51, 102, 0.2); /* 提升阴影 */
   background: #FFEBF0;  /* 更深的粉色背景 */
+  border-color: #FF3366;  /* 悬停时增加边框色 */
 }
-
+/* 标题样式 */
 .post-title {
   position: relative;
-  padding: 12px 20px 12px 56px;
+  padding: 16px 24px;  /* 内边距增加，提升可读性 */
   margin: 24px 0;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(255, 51, 102, 0.1);
-  font: 700 24px/1.3 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
-  color: #1A1A1A;
-  letter-spacing: -0.5px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #FFF0F5;  /* 背景为小红书风格淡粉色 */
+  border-radius: 8px;  /* 圆角效果 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);  /* 轻微阴影，增加层次感 */
+  font: 700 40px/1.4 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;  /* 字体调整为40px */
+  color: #1A1A1A;  /* 深灰色字体 */
+  letter-spacing: -0.5px;  /* 微调字间距 */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);  /* 平滑过渡效果 */
+  display: flex;
+  justify-content: flex-start;  /* 左对齐 */
+  align-items: center;
+  width: 100%;  /* 占满宽度 */
 }
 
+/* 标题前的红色条 */
 .post-title::before {
-  content: '';
+  content: '';  /* 不使用前缀文字 */
   position: absolute;
   left: 0;
   top: 8px;
   bottom: 8px;
-  width: 4px;
-  background: #FF3366;
+  width: 6px;  /* 增大左侧红色条的宽度 */
+  background: #FF3366;  /* 小红书品牌红色 */
   border-radius: 2px;
 }
 
+/* 悬停效果 */
 .post-title:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 51, 102, 0.15);
+  transform: translateY(-2px);  /* 向上浮动 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  /* 提升阴影效果 */
+  background: #FFE4E6;  /* 背景色微调为更深粉色 */
 }
 
+/* 悬停时红色条变化 */
 .post-title:hover::before {
-  width: 6px;
-  background: #FF6699;
+  width: 8px;  /* 增加悬停时红色条的宽度 */
+  background: #FF6699;  /* 悬停时红色条的渐变效果 */
 }
+
+
 /* 打印专用样式 */
 @media print {
   .maincontent_80px {
