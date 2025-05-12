@@ -7,21 +7,21 @@
     }
 
     .post-title {
-        font-size: 1.6rem !important;
+        font-size: 1.8rem !important; /* 保持较大字体 */
         line-height: 1.35;
         letter-spacing: -0.3px;
         margin: 0.8rem 0 0.6rem;
     }
 
     .post-date {
-        font-size: 0.78rem;
+        font-size: 1rem; /* 增加日期字体大小 */
         opacity: 0.9;
     }
 
     .kaiti-text,
     .heiti-text,
     .fangsong-text {
-        font-size: 0.9375rem;
+        font-size: 1.125rem; /* 稍大一点的正文字体 */
         line-height: 1.72;
         text-indent: 1.5em; /* 保持首行缩进 */
         margin: 0.8rem 0;
@@ -43,7 +43,7 @@
     .college-table td, 
     .college-table th {
         padding: 0.6rem 0.5rem;
-        font-size: 0.8125rem;
+        font-size: 1rem; /* 增大表格文字 */
         line-height: 1.5;
     }
 
@@ -51,11 +51,11 @@
         padding-left: 2.2em;
         text-indent: -2.2em;
         margin: 0.75rem 0;
-        font-size: 0.9em;
+        font-size: 1rem; /* 增大列表字体 */
     }
 
     .h2_tem1 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin: 1.2rem 0 0.8rem;
         padding-bottom: 0.4rem;
         border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -64,7 +64,7 @@
 
 @media screen and (max-width: 600px) {
     .post-title {
-        font-size: 1.4rem !important;
+        font-size: 1.8rem !important; /* 保持较大字体 */
         letter-spacing: -0.4px;
     }
 
@@ -75,18 +75,18 @@
     .college-table td, 
     .college-table th {
         padding: 0.55rem 0.45rem;
-        font-size: 0.75rem;
+        font-size: 1rem; /* 保持表格字体 */
     }
 
     .fangsong-list li::before {
-        font-size: 0.9em;
+        font-size: 1rem;
         left: -0.2em;
     }
 }
 
 @media screen and (max-width: 480px) {
     .post-title {
-        font-size: 1.25rem !important;
+        font-size: 1.6rem !important; /* 保持较大字体 */
         line-height: 1.32;
         margin: 0.6rem 0;
     }
@@ -94,7 +94,7 @@
     .kaiti-text,
     .heiti-text,
     .fangsong-text {
-        font-size: 0.875rem;
+        font-size: 1.125rem; /* 保持正文字体 */
         line-height: 1.75;
         text-indent: 1.2em; /* 保持首行缩进 */
         margin: 0.7rem 0;
@@ -119,7 +119,7 @@
 
 @media screen and (max-width: 360px) {
     .post-title {
-        font-size: 1.1rem !important;
+        font-size: 1.5rem !important; /* 保持较大字体 */
         letter-spacing: -0.5px;
         line-height: 1.3;
     }
@@ -127,7 +127,7 @@
     .kaiti-text,
     .heiti-text,
     .fangsong-text {
-        font-size: 0.8125rem;
+        font-size: 1.125rem; /* 保持正文字体 */
         text-indent: 1em; /* 保持首行缩进 */
         line-height: 1.78;
         margin: 0.6rem 0;
@@ -140,20 +140,20 @@
     .college-table td, 
     .college-table th {
         padding: 0.5rem 0.4rem;
-        font-size: 0.7rem;
+        font-size: 1rem; /* 保持表格字体 */
     }
 
     .fangsong-list li {
         padding-left: 1.8em;
         text-indent: -1.8em;
         margin: 0.6rem 0;
-        font-size: 0.85em;
+        font-size: 1rem; /* 增大列表字体 */
     }
 }
 
 @media screen and (max-width: 320px) {
     .post-title {
-        font-size: 1rem !important;
+        font-size: 1.5rem !important; /* 保持较大字体 */
     }
 
     .college-table table {
@@ -174,7 +174,7 @@
 /* ===== 列表优化 ===== */
 @media screen and (max-width: 768px) {
     ol.fangsong-list li {
-        font-size: 18px;
+        font-size: 1.125rem; /* 保持较大字体 */
         line-height: 1.65;
         margin: 1.2rem 0;
         padding-left: 2.8em;
@@ -201,7 +201,7 @@
 
 @media screen and (max-width: 480px) {
     ol.fangsong-list li {
-        font-size: 0.875rem;
+        font-size: 1.125rem; /* 保持较大字体 */
         line-height: 1.7;
         padding-left: 2.4em;
         margin: 1rem 0;
@@ -229,7 +229,7 @@
 
 @media screen and (max-width: 360px) {
     ol.fangsong-list li {
-        font-size: 15px;
+        font-size: 1rem; /* 保持较大字体 */
         padding-left: 2.2em;
         line-height: 1.72;
     }
@@ -239,7 +239,7 @@
     }
 
     ol.fangsong-list li em {
-        font-size: 0.92em;
+        font-size: 1.125rem;
         display: inline-block;
         margin-left: 0.5em;
     }
