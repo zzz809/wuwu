@@ -13,20 +13,20 @@
   padding: 0.6rem 0.8rem;
   font-size: 0.82em;
   color: #666;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 4px;
 }
 
 .breadcrumb a {
   color: #FF3B30;
   padding: 0.2rem 0.6rem;
-  text-decoration: none; /* 始终无下划线 */
-  transition: all 0.25s ease;
+  text-decoration: none;
+  transition: background 0.25s ease;
 }
 
 .breadcrumb a:hover {
-  background: rgba(255,59,48,0.06);
-  text-decoration: none; /* 确保悬停无下划线 */
+  background: rgba(255, 59, 48, 0.06);
+  text-decoration: none;
 }
 
 /* 紧凑分类容器 */
@@ -34,7 +34,7 @@
   background: #fff;
   padding: 1rem;
   margin-bottom: 1.2rem;
-  border: 1px solid rgba(255,59,48,0.1);
+  border: 1px solid rgba(255, 59, 48, 0.1);
   border-radius: 6px;
 }
 
@@ -64,28 +64,52 @@
 
 .policy-card {
   background: #fff;
-  border: 1px solid rgba(255,59,48,0.1);
+  border: 1px solid rgba(255, 59, 48, 0.1);
   border-radius: 5px;
   padding: 1rem;
   display: grid;
   grid-template-columns: 60px 1fr;
   gap: 12px;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
 .policy-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255,59,48,0.08);
+  box-shadow: 0 4px 12px rgba(255, 59, 48, 0.08);
+}
+
+/* 置顶标签 */
+.policy-card[data-sticky="true"] {
+  background-color: #f9f9f9;
+  border: 2px solid #ff6347;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5; /* 确保置顶文章在最上层 */
+}
+
+.policy-card[data-sticky="true"] .sticky-label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff6347;
+  color: white;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 10;
 }
 
 /* 日期区块优化 */
 .date-box {
-  background: rgba(255,59,48,0.04);
-  border: 1px solid rgba(255,59,48,0.08);
+  background: rgba(255, 59, 48, 0.04);
+  border: 1px solid rgba(255, 59, 48, 0.08);
   border-radius: 4px;
   padding: 0.6rem;
   text-align: center;
+  position: relative; /* 允许标签在顶部浮动 */
 }
 
 .year {
@@ -97,9 +121,14 @@
 .month-day {
   font-size: 0.78rem;
   color: #666;
-  display: flex; /* 新增flex布局 */
+  display: flex;
   justify-content: center;
   gap: 4px;
+}
+
+.month-day span:not(:last-child)::after {
+  content: "·";
+  margin-left: 2px;
 }
 
 /* 移动端紧凑时间显示 */
@@ -108,27 +137,52 @@
     grid-template-columns: 1fr;
     padding: 0.8rem;
   }
-  
+
+  /* 调整置顶标签位置，避免与日期重叠 */
+  .policy-card[data-sticky="true"] .sticky-label {
+    top: 6px; /* 上移置顶标签 */
+    right: 6px; /* 调整右侧距离 */
+    font-size: 12px; /* 调整字体 */
+    padding: 3px 8px; /* 适应小屏尺寸 */
+  }
+
   .date-box {
     width: 100%;
     padding: 0.6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1; /* 确保日期区域位于其他内容下方 */
   }
-  
+
   .year {
     font-size: 0.95rem;
     margin: 0;
   }
-  
+
   .month-day {
     font-size: 0.75rem;
     gap: 3px;
   }
-  
-  .month-day span:not(:last-child)::after {
-    content: "·";
-    margin-left: 2px;
+}
+
+@media (max-width: 480px) {
+  .policy-card[data-sticky="true"] .sticky-label {
+    font-size: 10px;
+    padding: 3px 8px;
+    top: 4px;
+    right: 4px;
+  }
+
+  .policy-card[data-sticky="true"] h3 {
+    font-size: 16px;
+  }
+
+  .policy-card {
+    padding: 10px;
+  }
+
+  .date-box {
+    padding: 0.5rem; /* 调整日期区块的内边距 */
   }
 }
