@@ -33,12 +33,10 @@
         margin: 1rem -0.8rem;
         border: 1px solid rgba(0,0,0,0.08);
         background: #f8f9fa;
-        width: 100%; /* 确保表格适应小屏幕 */
-        overflow-x: auto; /* 防止表格超出屏幕 */
     }
 
     .college-table table {
-        width: 100%; /* 使表格宽度适应容器 */
+        min-width: 560px;
         background: white;
     }
 
@@ -47,7 +45,6 @@
         padding: 0.6rem 0.5rem;
         font-size: 1rem; /* 增大表格文字 */
         line-height: 1.5;
-        word-wrap: break-word; /* 防止内容溢出 */
     }
 
     .fangsong-list li {
@@ -72,7 +69,7 @@
     }
 
     .college-table table {
-        min-width: 100%; /* 保证表格在小屏上可以自适应 */
+        min-width: 480px;
     }
 
     .college-table td, 
@@ -104,7 +101,7 @@
     }
 
     .college-table table {
-        min-width: 100%; /* 保证表格自适应 */
+        min-width: 400px;
     }
 
     .college-table td[rowspan],
@@ -137,7 +134,7 @@
     }
 
     .college-table table {
-        min-width: 100%; /* 保证表格适应 */
+        min-width: 320px;
     }
 
     .college-table td, 
@@ -160,7 +157,7 @@
     }
 
     .college-table table {
-        min-width: 100%; /* 保证表格适应 */
+        min-width: 300px;
     }
 
     .college-table td, 
