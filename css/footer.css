@@ -101,7 +101,7 @@
   }
   
   /* ===== 小屏优化（如手机） ===== */
-  @media (max-width: 767px) {
+  @media (max-width: 900px) {
     .footer {
       flex-direction: column; /* 小屏时改为竖直排列 */
       align-items: center;  /* 居中对齐 */
