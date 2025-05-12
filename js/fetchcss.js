@@ -1,4 +1,5 @@
 document.write('<link rel="stylesheet" href="/css/style.css">');
+document.write('<link rel="stylesheet" href="/css/nav-bar.css">');
 document.write('<link rel="stylesheet" href="/css/intro1.css">');
 document.write('<link rel="stylesheet" href="/css/clock.css">');
 document.write('<link rel="stylesheet" href="/css/divide.css">');
