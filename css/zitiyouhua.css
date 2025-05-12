@@ -1,64 +1,64 @@
-/* ===== 增强型移动端响应式优化 ===== */
+/* ===== 移动端响应式优化 ===== */
 @media screen and (max-width: 768px) {
     .post-item {
         padding: 0.8rem;
         margin: 0 -0.8rem;
-        border-radius: 0; /* 移除圆角提升空间利用率 */
+        border-radius: 0;
     }
 
     .post-title {
         font-size: 1.6rem !important;
-        line-height: 1.35; /* 优化行高 */
-        letter-spacing: -0.3px; /* 紧凑字距 */
+        line-height: 1.35;
+        letter-spacing: -0.3px;
         margin: 0.8rem 0 0.6rem;
     }
 
     .post-date {
         font-size: 0.78rem;
-        opacity: 0.9; /* 提升日期可读性 */
+        opacity: 0.9;
     }
 
     .kaiti-text,
     .heiti-text,
     .fangsong-text {
         font-size: 0.9375rem;
-        line-height: 1.72; /* 黄金比例行高 */
-        text-indent: 1.5em;
+        line-height: 1.72;
+        text-indent: 1.5em; /* 保持首行缩进 */
         margin: 0.8rem 0;
         hyphens: auto;
-        word-break: break-word; /* 新增安全断词 */
+        word-break: break-word;
     }
 
     .college-table {
         margin: 1rem -0.8rem;
-        border: 1px solid rgba(0,0,0,0.08); /* 添加边框提升可视性 */
-        background: #f8f9fa; /* 表格背景色 */
+        border: 1px solid rgba(0,0,0,0.08);
+        background: #f8f9fa;
     }
 
     .college-table table {
         min-width: 560px;
-        background: white; /* 表格内容反白 */
+        background: white;
     }
 
     .college-table td, 
     .college-table th {
-        padding: 0.6rem 0.5rem; /* 左右紧凑 */
+        padding: 0.6rem 0.5rem;
         font-size: 0.8125rem;
-        line-height: 1.5; /* 提升表格行高 */
+        line-height: 1.5;
     }
 
     .fangsong-list li {
-        padding-left: 2.2em; /* 优化序号对齐 */
+        padding-left: 2.2em;
         text-indent: -2.2em;
         margin: 0.75rem 0;
-        font-size: 0.9em; /* 列表字体相对单位 */
+        font-size: 0.9em;
     }
 
     .h2_tem1 {
         font-size: 1.2rem;
         margin: 1.2rem 0 0.8rem;
-        padding-bottom: 0.4rem; /* 下划线留白 */
-        border-bottom: 1px solid rgba(0,0,0,0.1); /* 视觉分割线 */
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 }
 
@@ -78,10 +78,9 @@
         font-size: 0.75rem;
     }
 
-    /* 增强列表序号 */
     .fangsong-list li::before {
-        font-size: 0.9em; /* 序号大小适配 */
-        left: -0.2em; /* 微调定位 */
+        font-size: 0.9em;
+        left: -0.2em;
     }
 }
 
@@ -97,7 +96,7 @@
     .fangsong-text {
         font-size: 0.875rem;
         line-height: 1.75;
-        text-indent: 1.2em;
+        text-indent: 1.2em; /* 保持首行缩进 */
         margin: 0.7rem 0;
     }
 
@@ -107,14 +106,14 @@
 
     .college-table td[rowspan],
     .college-table th[rowspan] {
-        min-width: 4.2rem; /* 紧凑行合并单元格 */
+        min-width: 4.2rem;
         padding: 0.4rem 0.35rem;
     }
 
     .fangsong-list li {
         padding-left: 2em;
         text-indent: -2em;
-        line-height: 1.68; /* 提升可读性 */
+        line-height: 1.68;
     }
 }
 
@@ -125,12 +124,11 @@
         line-height: 1.3;
     }
 
-    .fangsong-text {
     .kaiti-text,
     .heiti-text,
-    .fangsong-text{
+    .fangsong-text {
         font-size: 0.8125rem;
-        text-indent: 1em;
+        text-indent: 1em; /* 保持首行缩进 */
         line-height: 1.78;
         margin: 0.6rem 0;
     }
@@ -139,14 +137,12 @@
         min-width: 320px;
     }
 
-    /* 超小屏表格优化 */
     .college-table td, 
     .college-table th {
         padding: 0.5rem 0.4rem;
-        font-size: 0.7rem; /* 极限字号 */
+        font-size: 0.7rem;
     }
 
-    /* 列表终极优化 */
     .fangsong-list li {
         padding-left: 1.8em;
         text-indent: -1.8em;
@@ -155,10 +151,9 @@
     }
 }
 
-/* 新增超窄屏适配 */
 @media screen and (max-width: 320px) {
     .post-title {
-        font-size: 1rem !important; /* 18px */
+        font-size: 1rem !important;
     }
 
     .college-table table {
@@ -176,48 +171,39 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== 移动端列表优化 ===== */
+/* ===== 列表优化 ===== */
 @media screen and (max-width: 768px) {
-    /* 核心字号调整 */
     ol.fangsong-list li {
         font-size: 18px;
         line-height: 1.65;
         margin: 1.2rem 0;
-        padding-left: 2.8em;  /* 优化左侧空间 */
+        padding-left: 2.8em;
     }
 
     ol.fangsong-list li::before {
         display: none;
     }
 
-    /* 段落重构 */
     ol.fangsong-list p {
-        text-indent: 1.5em;    /* 缩进量减少25% */
+        text-indent: 1.5em;
         margin: 1rem 0;
         line-height: 1.75;
-        letter-spacing: 0.02em; /* 增加字距提升可读性 */
+        letter-spacing: 0.02em;
+    }
+
+    ol.fangsong-list strong {
+        font-weight: 600; /* 加粗 */
+        background: rgba(255,59,48,0.06); /* 红色背景 */
+        border-radius: 2px; /* 圆角 */
+        padding: 0.1rem 0.3rem; /* 增加内边距 */
     }
 }
 
-/* 手机深度适配 */
 @media screen and (max-width: 480px) {
     ol.fangsong-list li {
         font-size: 0.875rem;
         line-height: 1.7;
-        padding-left: 2.4em;  /* 紧凑布局 */
+        padding-left: 2.4em;
         margin: 1rem 0;
     }
 
@@ -225,26 +211,22 @@
         display: none;
     }
 
-    /* 段落移动端优化 */
     ol.fangsong-list p {
-        text-indent: 0;       /* 取消首行缩进 */
+        text-indent: 0;
         margin: 0.8rem 0;
         line-height: 1.78;
-        text-align: justify;  /* 两端对齐更整齐 */
-        hyphens: auto;        /* 启用自动断词 */
+        text-align: justify;
+        hyphens: auto;
     }
 
-    /* 强调文本优化 */
     ol.fangsong-list strong {
-        display: inline-block;
-        margin: 0.2rem 0;
-        padding: 0.1rem 0.3rem;
-        background: rgba(255,59,48,0.06); /* 小红书品牌红底色 */
+        font-weight: 600; /* 加粗 */
+        background: rgba(255,59,48,0.06); /* 红色背景 */
         border-radius: 2px;
+        padding: 0.1rem 0.3rem; /* 内边距优化 */
     }
 }
 
-/* 超小屏终极优化 */
 @media screen and (max-width: 360px) {
     ol.fangsong-list li {
         font-size: 15px;
@@ -256,16 +238,21 @@
         display: none;
     }
 
-    /* 括号内容处理 */
     ol.fangsong-list li em {
         font-size: 0.92em;
         display: inline-block;
         margin-left: 0.5em;
     }
 
-    /* 强制换行保护 */
     ol.fangsong-list br {
         display: inline-block;
         width: 0.5rem;
+    }
+
+    ol.fangsong-list strong {
+        font-weight: 600; /* 加粗 */
+        background: rgba(255,59,48,0.06); /* 红色背景 */
+        border-radius: 2px;
+        padding: 0.1rem 0.3rem;
     }
 }
