@@ -23,3 +23,6 @@ function startDownload(url, element) {
         element.style.transform = 'scale(1)';
     }, 200);
 }
+
+document.getElementById('print-url').textContent = window.location.href;
+document.getElementById('print-end').textContent = '全文结束（以下无正文）';
