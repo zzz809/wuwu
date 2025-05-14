@@ -1,18 +1,20 @@
-/* 默认都不显示 */
+/* 默认隐藏所有打印信息区块 */
 #print-url,
 #print-end {
   display: none;
 }
 
 @media print {
-  #print-url,
-  #print-end {
-    display: block;
+  /* 链接区块：左右对齐，风格统一 */
+  #print-url {
+    display: flex;                          /* 弹性布局 */
+    justify-content: space-between;        /* 左右分布 */
+    align-items: center;                   /* 垂直居中 */
     width: 100%;
     padding: 8px 20px;
-    background: #FFF0F5;
+    background: #FFF0F5;                   /* 淡粉背景 */
     border-radius: 16px;
-    color: #FF3366;
+    color: #FF3366;                        /* 小红书红 */
     font-size: 1.1rem;
     font-weight: 500;
     font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -22,6 +24,7 @@
     box-sizing: border-box;
   }
 
+  /* 插入左侧前缀文本 */
   #print-url::before {
     content: "本攻略网页链接：";
     font-weight: 600;
@@ -29,14 +32,21 @@
     margin-right: 12px;
   }
 
+  /* 全文结束提示 */
   #print-end {
+    display: block;
+    width: 100%;
     text-align: center;
     margin-top: 2rem;
+    padding: 8px 20px;
     color: #888;
     background: #F8F8F8;
     border: 1px dashed #CCC;
     font-size: 1rem;
     font-weight: 400;
+    border-radius: 16px;
     box-shadow: none;
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    box-sizing: border-box;
   }
 }
