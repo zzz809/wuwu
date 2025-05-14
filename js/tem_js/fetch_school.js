@@ -21,12 +21,20 @@ const campusData = [
         link: "http://ic.hitsz.edu.cn/info/1032/2527.htm"
     },
     {
+        schoolName: "哈尔滨工业大学",
+        collegeName: "电子与信息工程学院",
+        startDate: "2025年5月7日",
+        endDate: "2025年5月31日",
+        link: "https://seie.hit.edu.cn/2025/0507/c17148a369613/page.htm"
+    },
+    {
         schoolName: "中国科学院大学",
         collegeName: "前沿交叉科学学院",
         startDate: "2025年5月9日",
         endDate: "2025年5月30日",
         link: "https://sais.ucas.ac.cn/index.php/zh/xwgs/tgzs/1326-2025-2"
     },
+
     ];
     // 填充表格数据
     const tableBody = document.querySelector("#campus-table tbody");
