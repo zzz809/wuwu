@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面不存在</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            color: #d9534f;
+        }
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>页面不存在</h1>
+        <p>抱歉，您访问的页面无法找到。5秒后将自动跳转到首页。</p>
+    </div>
+
+    <script>
+        // 设置5秒后跳转到主页
+        setTimeout(function() {
+            window.location.href = '/';  // 首页的路径
+        }, 5000);
+    </script>
+</body>
+</html>
