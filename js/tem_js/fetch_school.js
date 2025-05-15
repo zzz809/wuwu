@@ -41,6 +41,13 @@ const campusData = [
         endDate: "2025年6月15日",
         link: "https://sme.sustech.edu.cn/index/news/neiye/id/798.html"
     },
+    {
+        schoolName: "浙江大学",
+        collegeName: "信息与电子工程学院",
+        startDate: "2025年5月15日",
+        endDate: "2025年6月15日",
+        link: "http://www.isee.zju.edu.cn/2025/0515/c21109a3049527/page.htm"
+    },
     ];
     // 填充表格数据
     const tableBody = document.querySelector("#campus-table tbody");
