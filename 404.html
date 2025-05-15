@@ -6,38 +6,66 @@
     <title>页面不存在</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f8f8f8;
+            background-color: #f0f0f0;
             color: #333;
+            overflow: hidden;
         }
         .container {
             text-align: center;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #d9534f;
+            margin-bottom: 15px;
         }
         p {
             font-size: 1.2em;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        .countdown {
+            font-size: 2em;
+            font-weight: bold;
+            color: #f39c12;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>页面不存在</h1>
-        <p>抱歉，您访问的页面无法找到。5秒后将自动跳转到首页。</p>
+        <p>抱歉，您访问的页面无法找到。</p>
+        <p>您将被自动重定向到首页 <span class="countdown">5</span> 秒后...</p>
+        <div class="footer">如果没有跳转，请点击 <a href="/">这里</a>。</div>
     </div>
 
     <script>
-        // 设置5秒后跳转到主页
-        setTimeout(function() {
-            window.location.href = '/';  // 首页的路径
-        }, 5000);
+        var countdownElement = document.querySelector('.countdown');
+        var countdownTime = 5;  // 初始化倒计时时间为5秒
+        
+        var countdownInterval = setInterval(function() {
+            countdownTime--;
+            countdownElement.textContent = countdownTime;
+            if (countdownTime <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = '/';  // 首页路径
+            }
+        }, 1000);
     </script>
 </body>
 </html>
