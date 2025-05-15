@@ -34,7 +34,13 @@ const campusData = [
         endDate: "2025年5月30日",
         link: "https://sais.ucas.ac.cn/index.php/zh/xwgs/tgzs/1326-2025-2"
     },
-
+    {
+        schoolName: "南方科技大学",
+        collegeName: "深港微电子学院",
+        startDate: "2025年5月14日",
+        endDate: "2025年6月15日",
+        link: "https://sme.sustech.edu.cn/index/news/neiye/id/798.html"
+    },
     ];
     // 填充表格数据
     const tableBody = document.querySelector("#campus-table tbody");
