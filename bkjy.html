@@ -29,30 +29,15 @@
         <a href="index.html">首页</a> &gt; 本科经验
     </div>
     <section class="policy-category">
-        <h2 class="category-title">
-            <span class="icon-file"></span>
-            本科经验
-        </h2>
-        <div class="policy-list">
-          <article class="policy-card" onclick="window.open('pages/1010.html', '_blank')">
-            <div class="date-box">
-                <div class="year">2025</div>
-                <div class="month-day">04-08</div>
-            </div>
-            <div class="policy-content">
-                <h3>中南大学毕业论文/小组作业展示PPT模板（4种不同的色系）</h3>
-            </div>
-        </article>
-            <article class="policy-card" onclick="window.open('pages/1002.html', '_blank')">
-                <div class="date-box">
-                    <div class="year">2025</div>
-                    <div class="month-day">03-09</div>
-                </div>
-                <div class="policy-content">
-                    <h3>中南大学大一新生速码！2024级本科生专业分流防踩雷攻略</h3>
-                </div>
-            </article>
-        </div>
+
+      <h2 class="category-title">
+        <span class="icon-file"></span>
+        保研经验
+      </h2>
+      <div class="policy-list" id="article-container_bkjy">
+        <!-- 所有的文章将动态加载到这里 -->
+      </div>
+
     </section>
   </main>
   <!-- 底部版权 -->
@@ -61,6 +46,14 @@
   <script src="js/search.js"></script>
   <script src="js/clock.js"></script>
   <script src="js/school.js"></script>
+  <script src="js/button_byjs.js"></script>
   <script src="js/fetch_main.js"></script>
+  <script src="js/autosort.js"></script>
+  <script src="js/bkjy_articles.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      loadArticles_bkjy();
+    });
+  </script>
 </body>
 </html>
