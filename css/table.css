@@ -72,7 +72,7 @@ tr:hover td {
   color: #d06688; /* 活跃时使用相同的深粉色 */
 }
 /* ================= 响应式设计 ================= */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   /* 在移动端调整字体大小 */
   table {
     font-size: 14px;
@@ -104,90 +104,47 @@ tr:hover td {
   }
 }
 
-/* ================= 打印适配 ================= */
 @media print {
-  /* 打印优化：不隐藏任何内容和颜色 */
-  body {
-    font-size: 12px; /* 适当调小字体 */
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff; /* 保证背景是白色 */
-    display: flex;
-    justify-content: center;  /* 居中显示内容 */
-    align-items: flex-start; /* 不要让内容完全垂直居中 */
-    flex-direction: column;
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm; /* 打印页边距可根据需要调整 */
   }
 
+  /* 保留原有样式基础上进行调整 */
   .college-table {
-    width: 100%;  /* 确保表格占满页面宽度 */
-    max-width: 100%; /* 确保不会超出页面 */
+    overflow: visible !important;
     box-shadow: none;
-    margin: 0;
+    border-radius: 0;
     padding: 0;
-    border-radius: 0; /* 去除圆角，打印时更适合 */
-    table-layout: auto; /* 自动调整列宽 */
-    margin-top: 20px; /* 顶部留白 */
-    margin-bottom: 20px; /* 底部留白 */
-    margin-left: auto; /* 左侧居中 */
-    margin-right: auto; /* 右侧居中 */
+  }
+
+  table {
+    width: 100% !important;
+    min-width: 0 !important;
+    table-layout: auto !important;
+    white-space: normal !important; /* 强制允许换行 */
+    word-wrap: break-word !important;
+    overflow: visible !important;
+    display: table !important;
   }
 
   th, td {
-    padding: 8px 10px;
-    font-size: 14px; /* 较小的字体适合打印 */
-    border: 1px solid #000; /* 给表格添加边框 */
+    word-break: break-word !important; /* 防止内容撑开单元格 */
+    white-space: normal !important;
   }
 
-  /* 打印时，表格列宽自适应 */
-  table {
-    width: 100%;
-    table-layout: auto; /* 自动调整列宽 */
-    word-wrap: break-word;
-    page-break-inside: avoid; /* 避免表格跨页断行 */
+  tr, td, th {
+    page-break-inside: avoid; /* 防止分页断裂 */
   }
 
-  /* 打印时，保留颜色和背景 */
-  th {
-    font-weight: bold;
-    background-color: #f8d4e1; /* 保留表头的背景色 */
-    color: #333; /* 表头文字颜色 */
-  }
-
-  td {
-    background-color: #fef0f3; /* 保留表格单元格背景 */
-    color: #495057; /* 内容文字颜色 */
-  }
-
-  /* 打印时奇偶行背景保持 */
-  tr:nth-child(even) td {
-    background-color: #fdf4f6;
-  }
-
+  /* 去掉 hover 效果（打印不需要） */
   tr:hover td {
-    background-color: #f8d0d8; /* 悬停时的颜色保持 */
+    background-color: inherit !important;
+    cursor: default;
   }
 
-  /* 确保没有页面溢出 */
-  table {
-    page-break-inside: avoid;
-    white-space: nowrap;
-  }
-
-  /* 保证打印页面表格居中 */
-  @page {
-    margin: 20mm; /* 设置适当的边距 */
-  }
-
-  /* 取消横向滚动条，保持表格的标准布局 */
-  .college-table {
-    overflow-x: unset;  /* 取消横向滚动 */
-    -webkit-overflow-scrolling: unset; /* 取消滚动样式 */
-    padding: 0; /* 取消内边距 */
-  }
-
-  table {
-    display: table; /* 恢复表格的标准显示 */
+  /* 保持链接颜色一致，可选显示 URL */
+  a::after {
+    content: "" !important; /* 不显示链接地址，保持美观 */
   }
 }
