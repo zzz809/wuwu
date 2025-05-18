@@ -25,4 +25,4 @@ document.write('<link rel="preload" href="/fonts/FangSong.ttf" as="font" crossor
 document.write('<link rel="icon" href="/images/intro.jpg" type="image/x-icon">');
 
 //保研经验按钮
-document.write('<link rel="stylesheet" href="/css/button_byjs.css">');
+document.write('<link rel="stylesheet" href="/css/button_byjy.css">');
