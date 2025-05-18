@@ -112,6 +112,7 @@
 /* 文章数量提示框 */
 .article-count {
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 14px;
   font-weight: 400; /* 使用标准的字体粗细，增加正式感 */
   color: #5a5a5a; /* 深灰色，增强可读性，同时与浅色背景配合 */
