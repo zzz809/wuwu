@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
   
         // 更新文章数量显示
-        articleCount.textContent = `共 ${sortedArticles.length} 条攻略`;
+        articleCount.innerHTML = `共 <span class="count-number">${sortedArticles.length}</span> 条攻略`;
       } catch (error) {
         console.error('加载文章失败:', error);
         articleCount.textContent = '加载失败，请重试'; // 错误时显示提示
