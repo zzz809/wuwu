@@ -152,6 +152,26 @@ body::after {
   background: #FF6699;  /* 悬停时红色条的渐变效果 */
 }
 
+@media (max-width: 768px) {
+  body {
+    touch-action: pan-y;
+  }
+
+  .content {
+    width: 100% !important;
+    padding: 2rem 1rem;
+    margin: 0;
+    left: 0;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 1.5rem 0.8rem;
+  }
+}
 
 /* 打印专用样式 */
 @media print {
@@ -202,26 +222,5 @@ body::after {
     width: calc(100% - 2rem);
     margin: 0 auto;
     box-sizing: border-box;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    touch-action: pan-y;
-  }
-
-  .content {
-    width: 100% !important;
-    padding: 2rem 1rem;
-    margin: 0;
-    left: 0;
-    transform: none;
-    box-shadow: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .content {
-    padding: 1.5rem 0.8rem;
   }
 }
