@@ -52,39 +52,6 @@
   
 /* ===== 打印优化 ===== */
 @media print {
-    .footer {
-      background: #2c3e50; /* 保持背景色不变 */
-      color: white;  /* 保持字体颜色为白色 */
-      padding: 1.5rem;  /* 保持原内边距 */
-      margin: 0 auto;  /* 居中页脚 */
-      text-align: center; /* 打印时文本居中 */
-      font-size: 16px; /* 保持原字体大小，不缩小 */
-      display: block;  /* 使用块级布局 */
-    }
-  
-    .footer-left, .footer-right {
-      display: block;  /* 打印时使用块级布局 */
-      margin-right: 0;
-      text-align: center; /* 打印时文字居中 */
-      margin-bottom: 10px; /* 增加底部间距，使内容不重叠 */
-    }
-  
-    .footer-qr {
-      width: 140px;  /* 打印时二维码尺寸不变 */
-      height: 140px;
-      margin-right: 40px;  /* 保持二维码之间的间隔 */
-      display: inline-block;  /* 打印时二维码作为内联块级元素显示 */
-      margin-bottom: 10px; /* 增加二维码底部间距 */
-    }
-  
-    .footer-right p {
-      margin: 5px 0;
-    }
-  
-    .footer-right p a {
-      margin-right: 100px;  /* 保持链接之间的间隔 */
-    }
-  
     /* 打印时移除hover效果 */
     .footer a:hover {
       color: white;
@@ -97,6 +64,40 @@
   
     body {
       margin: 0;
+    }
+    @media(max-width: 900px){
+      .footer {
+        background: #2c3e50; /* 保持背景色不变 */
+        color: white;  /* 保持字体颜色为白色 */
+        padding: 1.5rem;  /* 保持原内边距 */
+        margin: 0 auto;  /* 居中页脚 */
+        text-align: center; /* 打印时文本居中 */
+        font-size: 16px; /* 保持原字体大小，不缩小 */
+        display: block;  /* 使用块级布局 */
+      }
+    
+      .footer-left, .footer-right {
+        display: block;  /* 打印时使用块级布局 */
+        margin-right: 0;
+        text-align: center; /* 打印时文字居中 */
+        margin-bottom: 10px; /* 增加底部间距，使内容不重叠 */
+      }
+    
+      .footer-qr {
+        width: 140px;  /* 打印时二维码尺寸不变 */
+        height: 140px;
+        margin-right: 40px;  /* 保持二维码之间的间隔 */
+        display: inline-block;  /* 打印时二维码作为内联块级元素显示 */
+        margin-bottom: 10px; /* 增加二维码底部间距 */
+      }
+    
+      .footer-right p {
+        margin: 5px 0;
+      }
+    
+      .footer-right p a {
+        margin-right: 100px;  /* 保持链接之间的间隔 */
+      }  
     }
   }
   
