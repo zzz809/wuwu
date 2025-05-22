@@ -105,14 +105,14 @@ const campusData = [
     // 按开始时间排序
     sortStartBtn.addEventListener("click", () => {
       sortByDate("startDate", startAsc);
-      sortStartBtn.textContent = `按照开始时间排序 ${startAsc ? "↓" : "↑"}`;
+      sortStartBtn.textContent = `按开始时间排序 ${startAsc ? "↓" : "↑"}`;
       startAsc = !startAsc;
     });
     
     // 按结束时间排序
     sortEndBtn.addEventListener("click", () => {
       sortByDate("endDate", endAsc);
-      sortEndBtn.textContent = `按照结束时间排序 ${endAsc ? "↓" : "↑"}`;
+      sortEndBtn.textContent = `按结束时间排序 ${endAsc ? "↓" : "↑"}`;
       endAsc = !endAsc;
     });
 
@@ -132,7 +132,7 @@ const campusData = [
     // 学校名称排序点击事件
     sortSchoolBtn.addEventListener("click", () => {
     sortByString("schoolName", schoolAsc);
-    sortSchoolBtn.textContent = `按照学校名称排序 ${schoolAsc ? "↓" : "↑"}`;
+    sortSchoolBtn.textContent = `按学校名称排序 ${schoolAsc ? "↓" : "↑"}`;
     schoolAsc = !schoolAsc;
     });
 
