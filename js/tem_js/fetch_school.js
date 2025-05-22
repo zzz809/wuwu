@@ -48,6 +48,14 @@ const campusData = [
         endDate: "2025年6月15日",
         link: "http://www.isee.zju.edu.cn/2025/0515/c21109a3049527/page.htm"
     },
+    {
+        schoolName: "同济大学",
+        collegeName: "信息与电子工程学院",
+        startDate: "2025年5月13日",
+        endDate: "2025年6月13日",
+        link: "https://see.tongji.edu.cn/info/1147/13909.htm"
+    },
+    
     ];
     // 填充表格数据
     const tableBody = document.querySelector("#campus-table tbody");
