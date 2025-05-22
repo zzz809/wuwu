@@ -60,7 +60,7 @@ const campusData = [
         collegeName: "光学精密机械与物理研究所",
         startDate: "2025年5月6日",
         endDate: "2025年6月30日",
-        link: "https://see.tongji.edu.cn/info/1147/13909.htm"
+        link: "https://yjs.ciomp.ac.cn/news_show.aspx?id=1911"
     },
     ];
     // 填充表格数据
@@ -79,3 +79,20 @@ const campusData = [
     `;
     tableBody.appendChild(row);
     });
+
+// 解析日期字符串为 Date 对象
+function parseChineseDate(dateStr) {
+  // 使用正则表达式提取年份、月份和日期
+  const match = dateStr.match(/^(\d{4})年(\d{1,2})月(\d{1,2})日$/);
+  if (!match) return new Date(NaN); // 返回无效日期
+  const [_, year, month, day] = match;
+  return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+}
+
+// 对 campusData 按 startDate 升序排序
+campusData.sort((a, b) => {
+  const dateA = parseChineseDate(a.startDate);
+  const dateB = parseChineseDate(b.startDate);
+  return dateA - dateB;
+});
+
