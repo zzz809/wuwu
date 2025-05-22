@@ -135,8 +135,6 @@ const campusData = [
     sortSchoolBtn.textContent = `按学校名称排序 ${schoolAsc ? "↓" : "↑"}`;
     schoolAsc = !schoolAsc;
     });
-
-
     
 // 初始默认按开始时间升序排序并渲染
 sortByDate("startDate", true);
