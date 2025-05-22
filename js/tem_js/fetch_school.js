@@ -55,7 +55,13 @@ const campusData = [
         endDate: "2025年6月13日",
         link: "https://see.tongji.edu.cn/info/1147/13909.htm"
     },
-    
+    {
+        schoolName: "中国科学院大学",
+        collegeName: "光学精密机械与物理研究所",
+        startDate: "2025年5月6日",
+        endDate: "2025年6月30日",
+        link: "https://see.tongji.edu.cn/info/1147/13909.htm"
+    },
     ];
     // 填充表格数据
     const tableBody = document.querySelector("#campus-table tbody");
