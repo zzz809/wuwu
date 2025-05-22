@@ -63,36 +63,81 @@ const campusData = [
         link: "https://yjs.ciomp.ac.cn/news_show.aspx?id=1911"
     },
     ];
-    // 填充表格数据
     const tableBody = document.querySelector("#campus-table tbody");
-
-    campusData.forEach((data, index) => {
-    const row = document.createElement("tr");
-
-    row.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${data.schoolName}</td>
-        <td>${data.collegeName}</td>
-        <td>${data.startDate}</td>
-        <td>${data.endDate}</td>
-        <td><a href="${data.link}" target="_blank">查看详情</a></td>
-    `;
-    tableBody.appendChild(row);
+    const sortStartBtn = document.getElementById("sort-start");
+    const sortEndBtn = document.getElementById("sort-end");
+    
+    let startAsc = true;
+    let endAsc = true;
+    
+    // 将中文日期转换为标准 Date 对象
+    function parseChineseDate(str) {
+      return new Date(str.replace("年", "-").replace("月", "-").replace("日", ""));
+    }
+    
+    // 渲染表格内容
+    function renderTable(data) {
+      tableBody.innerHTML = "";
+      data.forEach((item, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${item.schoolName}</td>
+          <td>${item.collegeName}</td>
+          <td>${item.startDate}</td>
+          <td>${item.endDate}</td>
+          <td><a href="${item.link}" target="_blank">查看详情</a></td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+    
+    // 排序函数封装（通用）
+    function sortByDate(field, asc) {
+      campusData.sort((a, b) => {
+        const dateA = parseChineseDate(a[field]);
+        const dateB = parseChineseDate(b[field]);
+        return asc ? dateA - dateB : dateB - dateA;
+      });
+      renderTable(campusData);
+    }
+    
+    // 按开始时间排序
+    sortStartBtn.addEventListener("click", () => {
+      sortByDate("startDate", startAsc);
+      sortStartBtn.textContent = `按照开始时间排序 ${startAsc ? "↓" : "↑"}`;
+      startAsc = !startAsc;
+    });
+    
+    // 按结束时间排序
+    sortEndBtn.addEventListener("click", () => {
+      sortByDate("endDate", endAsc);
+      sortEndBtn.textContent = `按照结束时间排序 ${endAsc ? "↓" : "↑"}`;
+      endAsc = !endAsc;
     });
 
-// 解析日期字符串为 Date 对象
-function parseChineseDate(dateStr) {
-  // 使用正则表达式提取年份、月份和日期
-  const match = dateStr.match(/^(\d{4})年(\d{1,2})月(\d{1,2})日$/);
-  if (!match) return new Date(NaN); // 返回无效日期
-  const [_, year, month, day] = match;
-  return new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
-}
+    const sortSchoolBtn = document.getElementById("sort-school");
+    let schoolAsc = true; // 学校名称默认升序
 
-// 对 campusData 按 startDate 升序排序
-campusData.sort((a, b) => {
-  const dateA = parseChineseDate(a.startDate);
-  const dateB = parseChineseDate(b.startDate);
-  return dateA - dateB;
-});
+    // 字符串排序函数
+    function sortByString(field, asc) {
+    campusData.sort((a, b) => {
+        const nameA = a[field].localeCompare(b[field], "zh-Hans");
+        const nameB = b[field].localeCompare(a[field], "zh-Hans");
+        return asc ? nameA : nameB;
+    });
+    renderTable(campusData);
+    }
 
+    // 学校名称排序点击事件
+    sortSchoolBtn.addEventListener("click", () => {
+    sortByString("schoolName", schoolAsc);
+    sortSchoolBtn.textContent = `按照学校名称排序 ${schoolAsc ? "↓" : "↑"}`;
+    schoolAsc = !schoolAsc;
+    });
+
+
+    
+// 初始默认按开始时间升序排序并渲染
+sortByDate("startDate", true);
+startAsc = false; // 因为已是升序，下次点击要变为降序
