@@ -62,6 +62,21 @@ const campusData = [
         endDate: "2025年6月30日",
         link: "https://yjs.ciomp.ac.cn/news_show.aspx?id=1911"
     },
+    {
+    schoolName: "浙江大学",
+    collegeName: "集成电路学院",
+    startDate: "2025年5月22日",
+    endDate: "2025年6月15日",
+    link: "https://ic.zju.edu.cn/2025/0522/c54023a3054130/page.htm"
+    },
+    {
+    schoolName: "北京大学",
+    collegeName: "信息工程学院",
+    startDate: "2025年4月21日",
+    endDate: "2025年6月22日",
+    link: "https://www.ece.pku.edu.cn/info/1027/2923.htm"
+    },
+    
     ];
     const tableBody = document.querySelector("#campus-table tbody");
     const sortStartBtn = document.getElementById("sort-start");
