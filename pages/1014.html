@@ -105,7 +105,12 @@
       .button-group {
         margin-bottom: 0.5em;
       }
-    </style>    
+      @media print {
+        .button-group{
+          display: none !important;
+        }
+      }
+          </style>    
     <script src="/js/fetch_main.js"></script>
     <script src="/js/download.js"></script>
     <script src="/js/tem_js/fetch_school.js"></script>
