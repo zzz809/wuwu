@@ -76,7 +76,6 @@ const campusData = [
     endDate: "2025年6月22日",
     link: "https://www.ece.pku.edu.cn/info/1027/2923.htm"
     },
-    
     ];
     const tableBody = document.querySelector("#campus-table tbody");
     const sortStartBtn = document.getElementById("sort-start");
