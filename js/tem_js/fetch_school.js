@@ -104,13 +104,6 @@ const campusData = [
     endDate: "2025年6月15日",
     link: "https://mst.sysu.edu.cn/article/1229"
     },
-    {
-    schoolName: "中山大学",
-    collegeName: "微电子科学与技术学院",
-    startDate: "2025年5月29日",
-    endDate: "2025年6月15日",
-    link: "https://mst.sysu.edu.cn/article/1229"
-    },
     ];
     const tableBody = document.querySelector("#campus-table tbody");
     const sortStartBtn = document.getElementById("sort-start");
