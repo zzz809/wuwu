@@ -91,13 +91,6 @@ const campusData = [
     link: "https://ele.xjtu.edu.cn/info/1013/2625.htm"
     },
     {
-    schoolName: "西安交通大学",
-    collegeName: "微电子学院",
-    startDate: "2025年6月3日",
-    endDate: "2025年6月12日",
-    link: "https://ele.xjtu.edu.cn/info/1013/2625.htm"
-    },
-    {
     schoolName: "中山大学",
     collegeName: "微电子科学与技术学院",
     startDate: "2025年5月29日",
