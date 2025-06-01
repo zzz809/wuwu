@@ -76,6 +76,41 @@ const campusData = [
     endDate: "2025年6月22日",
     link: "https://www.ece.pku.edu.cn/info/1027/2923.htm"
     },
+    {
+    schoolName: "中国科学院大学",
+    collegeName: "半导体研究所",
+    startDate: "2025年5月23日",
+    endDate: "2025年6月15日",
+    link: "https://bdt.semi.ac.cn/yanjiusheng/contents/691/4471.html"
+    },
+    {
+    schoolName: "西安交通大学",
+    collegeName: "微电子学院",
+    startDate: "2025年6月3日",
+    endDate: "2025年6月12日",
+    link: "https://ele.xjtu.edu.cn/info/1013/2625.htm"
+    },
+    {
+    schoolName: "西安交通大学",
+    collegeName: "微电子学院",
+    startDate: "2025年6月3日",
+    endDate: "2025年6月12日",
+    link: "https://ele.xjtu.edu.cn/info/1013/2625.htm"
+    },
+    {
+    schoolName: "中山大学",
+    collegeName: "微电子科学与技术学院",
+    startDate: "2025年5月29日",
+    endDate: "2025年6月15日",
+    link: "https://mst.sysu.edu.cn/article/1229"
+    },
+    {
+    schoolName: "中山大学",
+    collegeName: "微电子科学与技术学院",
+    startDate: "2025年5月29日",
+    endDate: "2025年6月15日",
+    link: "https://mst.sysu.edu.cn/article/1229"
+    },
     ];
     const tableBody = document.querySelector("#campus-table tbody");
     const sortStartBtn = document.getElementById("sort-start");
