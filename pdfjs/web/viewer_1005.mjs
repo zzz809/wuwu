@@ -833,7 +833,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: "./document_pdf_1001_start/1005.pdf",//修改pdf的话主要修改这里就可以了
+    value: "./document_pdf_1001_start/中南大学商务英语课程期末考试开卷资料_2023年2月制作_2025年3月修改.pdf",//修改pdf的话主要修改这里就可以了
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
