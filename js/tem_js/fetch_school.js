@@ -97,6 +97,28 @@ const campusData = [
   endDate: "2025年6月15日",
   link: "https://mst.sysu.edu.cn/article/1229"
   },
+  {
+  schoolName: "上海交通大学",
+  collegeName: "集成电路学院",
+  startDate: "2025年6月6日",
+  endDate: "2025年6月25日",
+  link: "https://icisee.sjtu.edu.cn/notice/2552.html"
+  },
+  {
+  schoolName: "北京大学",
+  collegeName: "软件与微电子学院",
+  startDate: "2025年6月6日",
+  endDate: "2025年6月16日",
+  link: "https://www.ss.pku.edu.cn/admission/admnotice/4680.html"
+  },
+  {
+  schoolName: "北京大学",
+  collegeName: "集成电路学院",
+  startDate: "2025年6月6日",
+  endDate: "2025年6月18日",
+  link: "https://ic.pku.edu.cn/fwdh/tzgg/a34e058fb0bf4d708eda89326746f04a.htm"
+  },
+  
   ];
   const tableBody = document.querySelector("#campus-table tbody");
 
