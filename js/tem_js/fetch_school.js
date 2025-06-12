@@ -120,7 +120,7 @@ const campusData = [
   },
   {
   schoolName: "中国科学院大学",
-  collegeName: "微电子研究所学院",
+  collegeName: "微电子研究所",
   startDate: "2025年6月9日",
   endDate: "2025年6月30日",
   link: "http://ime.cas.cn/kjrh/tzggkjrh/202405/t20240522_7168020.html"
