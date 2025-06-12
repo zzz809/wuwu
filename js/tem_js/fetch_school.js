@@ -118,7 +118,28 @@ const campusData = [
   endDate: "2025年6月18日",
   link: "https://ic.pku.edu.cn/fwdh/tzgg/a34e058fb0bf4d708eda89326746f04a.htm"
   },
-  
+  {
+  schoolName: "中国科学院大学",
+  collegeName: "微电子研究所学院",
+  startDate: "2025年6月9日",
+  endDate: "2025年6月30日",
+  link: "http://ime.cas.cn/kjrh/tzggkjrh/202405/t20240522_7168020.html"
+  },
+{
+  schoolName: "中国科学院大学",
+  collegeName: "集成电路学院",
+  startDate: "2025年6月10日",
+  endDate: "2025年6月30日",
+  link: "https://sme.ucas.ac.cn/index.php/zh-cn/zsjy/sszs/536-2025-7"
+  },
+{
+  schoolName: "复旦大学",
+  collegeName: "未来信息创新学院（原信息科学与工程学院）",
+  startDate: "2025年6月10日",
+  endDate: "2025年6月25日",
+  link: "https://ercalt.fudan.edu.cn/Data/View/4888"
+  },
+
   ];
   const tableBody = document.querySelector("#campus-table tbody");
 
