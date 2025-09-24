@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script src="/js/fetchcss.js"></script>
+  <title>个人主页 | 小红书博主呜呜的网站</title>
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <nav class="nav-bar">
+    <div class="personal-info">
+      <span class="platform-name">小红书</span>
+      <span class="username">| 呜呜</span>
+    </div>
+    <span class="date" id="current-date"></span> <!-- 日期 -->
+    <span class="welcome-text">研究生生活&学习</span>
+  </nav>
+  <div class="maincontent_80px">
+  <nav class="ministerial-nav">
+      <div class="nav-inner">
+        <a href="/index.html" class="nav-link">首页</a>
+        <a href="/bkjy.html" class="nav-link">本科经验</a>
+        <a href="/byjy.html" class="nav-link">保研经验</a>
+        <a href="/yjs/index.html" class="nav-link active">研究生生活&学习</a>
+      </div>
+  </nav>
+<!-- 面包屑导航 -->
+  <main class="policy-container">
+    <div class="breadcrumb">
+        <span>您现在的位置：</span>
+        <a href="/index.html">首页</a> &gt; 研究生生活&学习
+    </div>
+    <section class="policy-category">
+
+      <h2 class="category-title">
+        <span class="icon-file"></span>
+        研究生生活&学习
+      </h2>
+
+    </h2>
+      <div id="article-count" class="article-count">
+        <!-- 这里显示文章数量 -->
+      </div>
+      <div class="policy-list" id="article-container">
+        <!-- 所有的文章将动态加载到这里 -->
+      </div>
+
+    </section>
+  </main>
+  <!-- 底部版权 -->
+  <div id="footer"></div>
+  <script src="/js/main.js"></script>
+  <script src="/js/search.js"></script>
+  <script src="/js/clock.js"></script>
+  <script src="/js/school.js"></script>
+  <script src="/js/button_yjs.js"></script>
+  <script src="/js/fetch_main.js"></script>
+  <script src="/js/autosort.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      loadArticles();
+    });
+  </script>
+</body>
+</html>
