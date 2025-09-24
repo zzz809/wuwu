@@ -1,7 +1,7 @@
 /* ================= 基础容器样式 ================= */
 .Mypdf-container {
     max-width: 1200px;
-    min-height: 150vh;
+    min-height: 100vh;
     height: auto;       /* 允许内容超过屏幕高度 */
     margin: 2rem auto;
     padding: 20px;
@@ -29,4 +29,5 @@
         height: auto;
         min-height: 100vh;
     }
+
 }
