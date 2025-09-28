@@ -273,6 +273,72 @@ h3.h3_qa + p.answer-text {
   background: linear-gradient(to right, #FFF9FA 10px, transparent 10px);
 }
 
+/* ================= 问题标题样式 ================= */
+h3.h3_tem1 {
+  /* 文字样式 */
+  font-family: 
+    'MyTimes',
+    'Times New Roman',
+    'MyKaiti',         /* 自定义字体 */
+    'MyHelvetica',
+    'PingFang SC',      /* 苹方字体 */
+    'Microsoft YaHei',  /* 微软雅黑 */
+    'Hiragino Sans GB', /* 冬青黑体 */
+    sans-serif;
+  font-size: 18px;
+  color: #FF2442;       /* 品牌红 */
+  letter-spacing: 0.02em;
+  font-weight: 600;
+
+  /* 装饰线样式 */
+  padding: 0.8rem 2rem;
+  margin: 1.5rem 0;
+  border-bottom: 2px solid #FFB6C1; /* 浅粉色装饰线 */
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* ================= 动态指示器 ================= */
+h3.h3_tem1::before {
+  content: "▶";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #FF2442;
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+
+/* ================= 悬停动效 ================= */
+h3.h3_tem1:hover {
+  padding-left: 2.5rem;
+  cursor: pointer;
+}
+h3.h3_tem1:hover::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* ================= 回答样式 ================= */
+h3.h3_tem1 + p.answer-text {
+  font-family: 
+  'MyTimes',
+  'Times New Roman',
+  'MyFangSong',         /* 自定义字体 */
+  '仿宋',               /* Windows系统字体 */
+  'FangSong',           /* macOS系统字体 */
+  'STFangsong',         /* 其他系统变体 */
+  serif;                /* 通用衬线字体 */
+  font-size: 20px;
+  color: #666;          /* 中灰色 */
+  line-height: 1.6;
+  margin: 0 0 2rem 2rem;
+  padding-left: 1.2rem;
+  border-left: 3px solid #FFD9E0; /* 浅粉装饰线 */
+  background: linear-gradient(to right, #FFF9FA 10px, transparent 10px);
+}
+
+
 .h3_person{
   font-family: 
   'MyTimes',
