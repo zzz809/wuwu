@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script src="/js/fetchcss.js"></script>
+  <title></title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const h1 = document.querySelector("h1");
+      if (h1) {
+        document.title = h1.textContent.trim();
+      }
+    });
+  </script>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div id="navbar-container"></div>
+    <script src="/js/fetch_nav_content.js"></script>
+    <div class="maincontent_80px">
+    <nav class="ministerial-nav">
+        <div class="nav-inner">
+          <a href="/index.html" class="nav-link">首页</a>
+          <a href="/bkjy.html" class="nav-link">本科经验</a>
+          <a href="/byjy.html" class="nav-link">保研经验</a>
+          <a href="./index.html" class="nav-link active">研究生生活&学习</a>
+        </div>
+    </nav>
+  <!-- 面包屑导航 -->
+    <main class="policy-container">
+      <div class="breadcrumb">
+          <span>您现在的位置：</span>
+          <a href="/index.html">首页</a> &gt; <a href="./index.html">研究生生活&学习</a>  &gt; 正文
+      </div>
+    <main class="content">
+      <article class="post-item" style="cursor: auto;">
+        <div class="post-date">2025-09-28</div>
+        <div id="print-url"></div>
+        <h1 class="post-title">中国科学院大学常用信息和服务网页汇总整理</h1>
+        <div class="fangsong-text">
+          <p class="fangsong-text">为方便国科大的各类资源使用，此网站整理汇总校内的常用信息和服务网页！</p>
+          <h2 class="h2_tem1">一、中国科学院大学常用网站</h2>
+          <div class="fangsong-text" id="link-list"></div>
+
+        </div>
+        <div id="print-end"></div>
+      </article>
+    </main>
+  </div>
+  <div id="footer"></div>
+  <script src="/js/fetch_main.js"></script>
+  <script src="/js/download.js"></script>
+<script>
+  // 链接数据
+  const links = [
+    { title: "入学通知网", url: "https://welcome.ucas.ac.cn/index.php/zh-cn/" },
+    { title: "入学新生本人信息", url: "https://welcome.ucas.ac.cn/index.php/zh-cn/gxfw/xinsheng" },
+    { title: "入学学院通知", url: "https://welcome.ucas.ac.cn/index.php/zh-cn/gxfw/tongzhi" },
+    { title: "教育云平台", url: "https://sep.ucas.ac.cn" },
+    { title: "选课系统", url: "http://xkgo.ucas.ac.cn:3000/courseManage/main" },
+    { title: "图书馆", url: "http://lib.ucas.ac.cn/" },
+    { title: "校园网", url: "https://portal.ucas.ac.cn/" },
+    { title: "奖助学金系统", url: "https://scholarship.ucas.ac.cn/notice/yjsindex" },
+    { title: "中科院邮箱", url: "https://mail.cstnet.cn/" },
+  ];
+  const container = document.getElementById("link-list");
+  links.forEach((link, index) => {
+    const p = document.createElement("p");
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.target = "_blank";
+    a.className = "fangsong-text";
+    a.style.color = "black";
+    a.style.textDecoration = "none";
+    a.textContent = link.url;
+
+    // 拼接序号和标题
+    p.textContent = `${index + 1}. ${link.title}：`;
+    p.appendChild(a);
+    container.appendChild(p);
+  });
+</script>
+</body>
+</html>
+
