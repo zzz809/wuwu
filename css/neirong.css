@@ -156,13 +156,15 @@
   }
 
   .year {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin: 0;
+    font-weight: 700;        /* 加粗年份 */
   }
 
   .month-day {
-    font-size: 0.75rem;
+    font-size: 1rem;
     gap: 3px;
+    font-weight: 600;       
   }
 }
 
@@ -186,3 +188,4 @@
     padding: 0.5rem; /* 调整日期区块的内边距 */
   }
 }
+
