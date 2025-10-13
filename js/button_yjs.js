@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const loadArticles = async (category = 'all') => {
     try {
       // 使用 Fetch API 加载外部 HTML 文件
-      const response = await fetch('/fengzhuang/yjs_articles.html');
+      const response = await fetch('/yjs/yjs_articles.html');
       const text = await response.text();
 
       // 将外部 HTML 内容转化为 DOM
