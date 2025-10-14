@@ -106,24 +106,7 @@
     <div class="error-container">
         <h1>404</h1>
         <h2>哎呀！页面丢失了...</h2>
-        <p>您访问的页面无法找到。稍后将自动跳转到首页，或者您可以点击下面的按钮直接返回。</p>
-        <p><span class="countdown">5</span> 秒后将自动跳转首页 </p>
-        <button onclick="window.location.href = '/'">返回首页</button>
-        <div class="footer">如果没有跳转，请点击 <a href="/">这里</a>。</div>
+        <p>您访问的页面无法找到!</p>
     </div>
-
-    <script>
-        var countdownElement = document.querySelector('.countdown');
-        var countdownTime = 5;  // 初始化倒计时时间为5秒
-        
-        var countdownInterval = setInterval(function() {
-            countdownTime--;
-            countdownElement.textContent = countdownTime;
-            if (countdownTime <= 0) {
-                clearInterval(countdownInterval);
-                window.location.href = '/';  // 首页路径
-            }
-        }, 1000);
-    </script>
 </body>
 </html>
